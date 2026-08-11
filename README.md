@@ -1,2 +1,2 @@
 # Kholod13.github.io
-Website about cakes, bussines project
+Simple copy of cv with currently info
