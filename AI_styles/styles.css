@@ -1,0 +1,397 @@
+/* ============================================
+   Vladyslav Kholod — Premium Editorial Theme
+   ============================================ */
+
+:root {
+    --bg: #0b0c10;
+    --bg-soft: #111319;
+    --surface: rgba(255, 255, 255, 0.035);
+    --surface-hover: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.09);
+    --border-strong: rgba(201, 161, 91, 0.35);
+    --text: #e8e6e1;
+    --text-dim: #9a9a9f;
+    --text-faint: #6b6b70;
+    --gold: #c9a15b;
+    --gold-light: #e4c88a;
+    --gold-dim: rgba(201, 161, 91, 0.4);
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html, body, div, p, a, h1, h2, h3, h4, ol, ul {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+    font-family: var(--sans);
+    color: var(--text);
+    background:
+        radial-gradient(ellipse 900px 600px at 15% -5%, rgba(201, 161, 91, 0.08), transparent 60%),
+        radial-gradient(ellipse 700px 500px at 100% 20%, rgba(120, 100, 200, 0.06), transparent 55%),
+        var(--bg);
+    background-attachment: fixed;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 18px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.wrapper {
+    margin: 32px auto 60px;
+    max-width: 850px;
+    position: relative;
+    padding: 0 20px;
+}
+
+/* ============ NAV ============ */
+nav {
+    display: flex;
+    background: rgba(17, 19, 25, 0.7);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    justify-content: space-between;
+    gap: 2px;
+    position: sticky;
+    padding: 10px 18px;
+    top: 16px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+    z-index: 50;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-weight: 600;
+    padding: 9px 10px;
+    border-bottom: 2px solid transparent;
+    transition: color 320ms ease, border-color 320ms ease;
+    font-size: 13.5px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.link:hover {
+    color: var(--gold-light);
+    border-bottom-color: var(--gold);
+    background: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* ============ TYPOGRAPHY ============ */
+h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    padding: 0 0 18px 0;
+    background: linear-gradient(120deg, #f4ecd8 0%, var(--gold-light) 45%, var(--gold) 75%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h3 {
+    color: var(--text);
+    font-family: var(--serif);
+    font-weight: 700;
+}
+
+h4 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--gold-light);
+    padding-bottom: 10px;
+}
+
+.block h3 {
+    font-size: 26px;
+    margin: 0 0 22px 0;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 0.01em;
+}
+
+.block h3::before {
+    content: "";
+    display: inline-block;
+    width: 26px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+p, li {
+    font-size: 16.5px;
+    padding: 4px 0;
+    color: var(--text);
+}
+
+.description-block p {
+    color: var(--text-dim);
+}
+
+span {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--gold);
+    display: inline-block;
+    padding: 5px 12px;
+    margin: 0 0 12px 0;
+    background: rgba(201, 161, 91, 0.08);
+    border: 1px solid var(--gold-dim);
+    border-radius: 999px;
+}
+
+ul, ol {
+    margin: 12px 0 0 0;
+}
+
+strong {
+    color: var(--gold-light);
+    font-weight: 600;
+}
+
+/* ============ SECTION CARDS ============ */
+.block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 36px;
+    margin: 24px 0;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    transition: border-color 400ms ease, transform 400ms ease, box-shadow 400ms ease;
+}
+
+.block:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(201, 161, 91, 0.08);
+}
+
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+/* ============ DESCRIPTION / HERO ============ */
+.description-block {
+    display: flex;
+    padding: 40px 10px 50px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.description-block div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.description-block ul {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.description-block ul li {
+    letter-spacing: 0.2px;
+    color: var(--text-dim);
+    font-size: 15.5px;
+}
+
+.description-block ul li strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.description-block ul li a {
+    color: var(--gold-light);
+    border-bottom: 1px solid var(--gold-dim);
+    transition: border-color 300ms ease, color 300ms ease;
+}
+
+.description-block ul li a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+}
+
+img {
+    border-radius: 50%;
+    height: 220px;
+    width: 220px;
+    object-fit: cover;
+    padding: 6px;
+    border: 1px solid var(--border);
+    background:
+        linear-gradient(var(--bg-soft), var(--bg-soft)) padding-box,
+        linear-gradient(140deg, var(--gold), rgba(120, 100, 200, 0.5), var(--gold-light)) border-box;
+    box-shadow: 0 0 50px rgba(201, 161, 91, 0.15), 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ============ ITEM CARDS (experience / education / certs) ============ */
+.item {
+    position: relative;
+    padding: 18px 0 18px 22px;
+    border-left: 2px solid var(--gold-dim);
+    margin-bottom: 6px;
+}
+
+.item::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 26px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 12px rgba(201, 161, 91, 0.7);
+}
+
+.item + .item {
+    margin-top: 10px;
+    padding-top: 22px;
+    border-top: 1px dashed var(--border);
+}
+
+/* Projects */
+.projects-item ul li {
+    list-style: none;
+    position: relative;
+    padding-left: 18px;
+    color: var(--text-dim);
+}
+
+.projects-item ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+}
+
+/* Experience ordered list */
+.experience-item ol li {
+    padding: 8px 0;
+    color: var(--text-dim);
+}
+
+/* Skills list */
+.skills-block ul li {
+    padding: 6px 0;
+    color: var(--text-dim);
+}
+
+/* ============ FOOTER ============ */
+footer {
+    background: rgba(17, 19, 25, 0.7);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+    position: sticky;
+    padding: 14px 0;
+    bottom: 16px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+footer .link {
+    color: var(--text-dim);
+    font-size: 14px;
+}
+
+footer .link:hover {
+    color: var(--gold-light);
+}
+
+.button {
+    background: linear-gradient(120deg, var(--gold), var(--gold-light));
+    color: #17140d !important;
+    padding: 10px 22px !important;
+    border-radius: 999px;
+    font-weight: 700;
+    border-bottom: none !important;
+    box-shadow: 0 4px 18px rgba(201, 161, 91, 0.35);
+    transition: transform 280ms ease, box-shadow 280ms ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(201, 161, 91, 0.5);
+    border-bottom: none !important;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 700px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .description-block {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 30px 10px;
+    }
+
+    .description-block div {
+        align-items: center;
+    }
+
+    img {
+        height: 160px;
+        width: 160px;
+    }
+
+    nav {
+        overflow-x: auto;
+        justify-content: flex-start;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .block {
+        padding: 24px 20px;
+    }
+
+    footer {
+        gap: 24px;
+    }
+}
