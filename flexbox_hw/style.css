@@ -1,0 +1,70 @@
+*, html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+button{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+nav{
+    display: flex;
+    gap: 30px;
+    color: gray;
+    font-size: large;
+}
+.auth{
+    display: flex;
+    gap: 10px;
+}
+.auth button{
+    padding: 10px 20px;
+    transition-duration: 0.3s;
+    border-radius: 10px;
+}
+.auth button:hover{
+    margin-top: -5px;
+    transition-duration: 0.3s;
+}
+.auth button:last-child{
+    background-color: black;
+    color: white;
+}
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+.social{
+    display: flex;
+    gap: 0.5rem;
+}
+.social img{
+    width: 30px;
+    height: 30px;
+}
+footer p{
+    color: gray;
+}
