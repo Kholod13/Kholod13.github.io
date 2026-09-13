@@ -24,4 +24,13 @@ export default class ToDoItem {
     getText() {
         return this.#text;
     }
+
+    getDate() {
+        const formatDT = (date) =>
+            date
+                ? `${date.toLocaleDateString('en-US')} ${date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`
+                : 'not finished';
+
+        return `${formatDT(this.#startDate)} / ${formatDT(this.#endDate)}`;
+    }
 }

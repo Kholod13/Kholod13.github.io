@@ -30,10 +30,10 @@ import ToDoItem from './components/ToDoItem.js';
     }
 
     function renderList() {
-        list.innerHTML = ""; // очистка перед перерисовкой
+        list.innerHTML = "";
 
         if (taskList.length === 0) {
-            list.classList.add('listChecker'); // add, не setAttribute
+            list.classList.add('listChecker');
             const empty = document.createElement('h3');
             empty.innerText = 'Add your first task and manage your life!';
             list.appendChild(empty);
@@ -56,6 +56,10 @@ import ToDoItem from './components/ToDoItem.js';
             divLabel.setAttribute("for", `task-checkbox-${index}`);
             divLabel.innerHTML = task.getText();
 
+            const spanDate = document.createElement("span");
+            spanDate.innerHTML = task.getDate();
+            spanDate.setAttribute("class", "task-date-tooltip");
+
             const btnDelete = document.createElement("button");
             btnDelete.setAttribute("type", "button");
             btnDelete.innerHTML = "Delete";
@@ -63,21 +67,22 @@ import ToDoItem from './components/ToDoItem.js';
             const btnClose = document.createElement("button");
             btnClose.setAttribute("type", "button");
 
-            applyTaskAppearance(task, li, divInput, divLabel, btnDelete, btnClose); // сразу выставляем вид по текущему статусу
+            applyTaskAppearance(task, li, divInput, divLabel, btnDelete, btnClose);
 
-            // чекбокс: обычное выполнение задачи
+            // Checkbox
             divInput.addEventListener("change", () => {
                 task.complete();
                 applyTaskAppearance(task, li, divInput, divLabel, btnDelete, btnClose);
+                spanDate.innerHTML = task.getDate();
             });
 
-            // крестик: раз чекбокс станет disabled, именно эта кнопка возвращает задачу обратно
             btnClose.addEventListener("click", () => {
-                task.complete(); // переключаем статус обратно на false
+                task.complete();
                 applyTaskAppearance(task, li, divInput, divLabel, btnDelete, btnClose);
+                spanDate.innerHTML = task.getDate();
             });
 
-            // Delete: полное удаление задачи из списка
+            // Delete
             btnDelete.addEventListener("click", () => {
                 const idx = taskList.indexOf(task);
                 taskList.splice(idx, 1);
@@ -87,6 +92,7 @@ import ToDoItem from './components/ToDoItem.js';
             li.appendChild(liContainer);
             liContainer.appendChild(divInput);
             liContainer.appendChild(divLabel);
+            liContainer.appendChild(spanDate);
             li.appendChild(btnDelete);
             li.appendChild(btnClose);
             list.appendChild(li);
@@ -102,6 +108,4 @@ import ToDoItem from './components/ToDoItem.js';
         input.value = '';
         renderList();
     })
-
-
 })();

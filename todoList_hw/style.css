@@ -33,7 +33,7 @@
  }
 .custom-check:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(46, 204, 130, 0.25); /* мягкое зелёное свечение вместо синего */
+    box-shadow: 0 0 0 3px rgba(46, 204, 130, 0.25);
 }
 .custom-close:focus {
     outline: none;
@@ -53,4 +53,15 @@
     border: solid #fff;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
+}
+
+.task-date-tooltip {
+    display: none;
+    margin-left: 10px;
+    font-size: 12px;
+    color: gray;
+}
+
+.form-check-label:hover + .task-date-tooltip {
+    display: inline;
 }
