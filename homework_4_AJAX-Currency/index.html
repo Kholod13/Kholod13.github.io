@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Currency Rate Analyzer</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <main>
+            <select id="currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+            </select>
+
+            <input type="date" id="ex_date_start">
+            <input type="date" id="ex_date_end">
+
+            <button id="btnSend">Chart</button>
+
+            <p id="errorBox" style="color: red;"></p>
+            <canvas id="rateChart"></canvas>
+        </main>
+
+        <script type="module" src="main.js"></script>
+    </body>
+</html>
